@@ -1,4 +1,5 @@
 # xmlを読み込む（テキストデータのままっぽい）
+library(XML)
 doc <- xmlParse("P11-10_47-jgd-g.xml")
 
 # <gml:pos>というタグの付いているやつをタグごと持ってくる
