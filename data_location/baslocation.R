@@ -34,3 +34,16 @@ basstop_data <- data.frame(NAMES=basstop_name, LATITUDE=latitudes, LONGTUDE=long
 
 # 沖縄っぽい地図が見える
 #plot(basstop_data$LATITUDE,basstop_data$LONGTUDE)
+
+basstop_route <- getNodeSet(doc,"//ksj:BusStop")
+a <- sapply(basstop_route, function(x) xmlChildren(x)[c(-1,-2)])
+b <- sapply(a,function(x) sapply(x, xmlChildren))
+c <- sapply(b,function(x) sapply(x, xmlChildren))
+e <- lapply(c, function(x) x[seq(3,length(x),3)])
+f <- lapply(e, function(x) lapply(x,xmlValue))
+
+# 一つ目のバス停に接続されている経路
+#f[[1]]
+
+# 一つ目のバス停の一つ目の経路
+#f[[1]][[1]]
