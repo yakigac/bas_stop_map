@@ -26,13 +26,11 @@ items_number <- sapply(items_num, function(x) as.numeric(unlist(strsplit(x," "))
 latitudes <- items_number[seq(1,length(items_number),2)]
 longtudes <- items_number[seq(2,length(items_number),2)]
 
-# バス停留所のIDと緯度経度の関係
-data_map <- data.frame(LATITUDE=latitudes, LONGTUDE=longtudes)
-
-# 沖縄っぽい地図が見える
-#plot(latitudes,longtudes)
-#plot(data_map)
-
 basstop_name <- getNodeSet(doc,"//ksj:busStopName")
 basstop_name <- sapply(basstop_name, function(x) xmlValue(x))
-data_map <- data.frame(NAMES=basstop_name, LATITUDE=latitudes, LONGTUDE=longtudes)
+
+# バス停留所のIDと緯度経度の関係
+basstop_data <- data.frame(NAMES=basstop_name, LATITUDE=latitudes, LONGTUDE=longtudes)
+
+# 沖縄っぽい地図が見える
+#plot(basstop_data$LATITUDE,basstop_data$LONGTUDE)
