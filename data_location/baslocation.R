@@ -32,3 +32,7 @@ data_map <- data.frame(LATITUDE=latitudes, LONGTUDE=longtudes)
 # 沖縄っぽい地図が見える
 #plot(latitudes,longtudes)
 #plot(data_map)
+
+basstop_name <- getNodeSet(doc,"//ksj:busStopName")
+basstop_name <- sapply(basstop_name, function(x) xmlValue(x))
+data_map <- data.frame(NAMES=basstop_name, LATITUDE=latitudes, LONGTUDE=longtudes)
