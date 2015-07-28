@@ -15,4 +15,4 @@ source("baslocation.R")
 で動く．
 
 ## Summary
-data_mapオブジェクトの中に，バス停一つごとの名前，緯度，経度が入る．
+basstop_dataオブジェクトの中に，バス停一つごとの名前，緯度，経度が入る．
