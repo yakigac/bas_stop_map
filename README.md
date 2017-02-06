@@ -1,4 +1,4 @@
-# bas_stop_map
+# bas stop map
 バス停情報を国土数値情報から整理する．
 
 ## How to use
